@@ -6,7 +6,7 @@ from django.db import DatabaseError
 # Create your views here.
 def inicio_sesion(request):
 
-    return render(request,'index.html')
+    return render(request,'layouts/navbar.html')
 
 def registro_usuario(request):
     if request.method == 'GET':
