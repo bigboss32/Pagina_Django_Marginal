@@ -4,8 +4,9 @@ from django.contrib.auth.models import User
 from .models import Persona
 from django.contrib.auth import login,logout,authenticate
 from django.db import DatabaseError
+from django.contrib.auth.decorators import login_required
 # Create your views here.
-
+@login_required
 def index(request):
       return render(request,'index.html')
 
@@ -55,4 +56,12 @@ def iniciar_sesion(request):
         
 
 def crear_comprador(request):
-    return render(request, 'Crear_comprador.html')
+    return render(request, 'pages/compradores/Crear_comprador.html')
+
+
+def crear_articulo(request):
+    return render(request, 'pages/articulos/crear_articulo.html')
+
+
+def crear_venta(request):
+    return render(request, 'pages/ventas/registrar_venta.html')
